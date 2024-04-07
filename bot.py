@@ -205,8 +205,19 @@ async def start_handler(c: Client, m: Message):
         user.set()
     res = await m.reply_text(
         text=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}** ",
-        quote=True,
+      reply_markup=InlineKeyboardMarkup(
+                [
+			[
+                        InlineKeyboardButton("☕ buy me a Coffee ☕", url="https://www.buymeacoffee.com/nihaal"),
+                        ],
+			[
+			InlineKeyboardButton("🌟 Support Channel", url="https://t.me/TG_BotCreator"),
+			]
+		]
+      ),
+	quote=True,
     )
+	
     del user
 
 

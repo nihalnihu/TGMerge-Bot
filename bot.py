@@ -196,7 +196,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n🛡️ ᴜɴғᴏʀᴛᴜɴᴀᴛᴇʟʏ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ᴍᴇ\n\n**ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ʟᴏɢɪɴ ᴛᴏ ᴜsᴇ ᴍᴇ sᴇɴᴅ ᴍsɢ ᴛᴏ @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -204,14 +204,14 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_text(
-        text=f"Hy **{m.from_user.first_name}**😊\n\n⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**you have to login the Bot (<code> Send MERGE_PASS </code>): @{Config.OWNER_USERNAME}** 😁",
+        text=f"Hy **{m.from_user.first_name}**😊\n\n⚡ 𝙸 𝚊𝚖 𝚊 𝚏𝚒𝚕𝚎/𝚟𝚒𝚍𝚎𝚘 𝙼𝚎𝚛𝚐𝚎 𝙱𝚘𝚝\n\n😎 𝙸 𝙲𝚊𝚗 𝙼𝚎𝚛𝚐𝚎 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝙵𝚒𝚕𝚎𝚜!, 𝙰𝚗𝚍 𝚄𝚙𝚕𝚘𝚊𝚍 𝚒𝚝 𝚝𝚘 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖\n\n**𝚈𝚘𝚞 𝙷𝚊𝚟𝚎 𝚃𝚘 𝙻𝚘𝚐𝚒𝚗 𝚃𝚘 𝚄𝚜𝚎 𝙼𝚎! 𝚂𝚎𝚗𝚍 <code>MERGE_PASS</code> To @{Config.OWNER_USERNAME}** 😁",
       reply_markup=InlineKeyboardMarkup(
                 [
 			[
                         InlineKeyboardButton("☕ buy me a Coffee ☕", url="https://www.buymeacoffee.com/nihaal"),
                         ],
 			[
-			InlineKeyboardButton("🌟 Support Channel", url="https://t.me/TG_BotCreator"),
+			InlineKeyboardButton("🌟 Sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ", url="https://t.me/TG_BotCreator"),
 			]
 		]
       ),
@@ -410,8 +410,17 @@ async def photo_handler(c: Client, m: Message):
     # if m.from_user.id != int(Config.OWNER):
     if not user.allowed:
         res = await m.reply_text(
-            text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
-            quote=True,
+            text=f"Hi **{m.from_user.first_name}**\n\n🛡️ ᴜɴғᴏʀᴛᴜɴᴀᴛᴇʟʏ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ᴍᴇ\n\n**ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ʟᴏɢɪɴ ᴛᴏ ᴜsᴇ ᴍᴇ sᴇɴᴅ ᴍsɢ ᴛᴏ @{Config.OWNER_USERNAME}** ",
+           reply_markup=InlineKeyboardMarkup(
+
+		   [
+			   [
+			 InlineKeyboardButton("🌟sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ", url="https://t.me/TG_BotCreator")
+			   ]
+		   ]
+	   )
+	    quote=True,
+	    
         )
         del user
         return
@@ -441,7 +450,7 @@ async def media_extracter(c: Client, m: Message):
             mid=rmess.id
             file_name = media.file_name
             if file_name is None:
-                await m.reply("File name not found; goto @yashoswalyo")
+                await m.reply("File name not found; goto @nihh_all")
                 return
             markup = bMaker.makebuttons(
                 set1=["Audio", "Subtitle", "Cancel"],
@@ -456,7 +465,7 @@ async def media_extracter(c: Client, m: Message):
             )
     else:
         await m.reply(
-            text="Change settings and set mode to extract\nthen use /extract command"
+            text="Change settings and set mode to extract\nthen use /extract command reply to a file"
         )
 
 
@@ -481,31 +490,28 @@ async def help_msg(c: Client, m: Message):
 async def about_handler(c: Client, m: Message):
     await m.reply_text(
         text="""
-**ᴡʜᴀᴛ's ɴᴇᴡ:**
-👨‍💻 ʙᴀɴ/ᴜɴʙᴀɴ ᴜsᴇʀs
+**ғᴇᴀᴛᴜʀᴇs:**
 👨‍💻 ᴇxᴛʀᴀᴄᴛ ᴀʟʟ ᴀᴜᴅɪᴏs ᴀɴᴅ sᴜʙᴛɪᴛʟᴇs ғʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ
+👨‍💻 ᴍᴇʀɢᴇ ᴜᴘᴛᴏ 𝟷𝟶 ᴠɪᴅᴇᴏ ɪɴ ᴏɴᴇ
+👨‍💻 ᴜᴘʟᴏᴀᴅ ᴀs ᴅᴏᴄᴜᴍᴇɴᴛs/ᴠɪᴅᴇᴏ
+👨‍💻 ᴄᴜsᴛᴏᴍs ᴛʜᴜᴍʙɴᴀɪʟ sᴜᴘᴘᴏʀᴛ
+👨‍💻 ᴍᴇʀɢᴇᴅ ғɪʟᴇs ʀᴇɴᴀᴍᴇ ᴏᴘᴛɪᴏɴ
 👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + ᴀᴜᴅɪᴏ 
+👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + ᴠɪᴅᴇᴏ
 👨‍💻 ᴍᴇʀɢᴇ ᴠɪᴅᴇᴏ + sᴜʙᴛɪᴛʟᴇs
-👨‍💻 ᴜᴘʟᴏᴀᴅ ᴛᴏ ᴅʀɪᴠᴇ ᴜsɪɴɢ ʏᴏᴜʀ ᴏᴡɴ ʀᴄʟᴏɴᴇ ᴄᴏɴғɪɢ
 👨‍💻 ᴍᴇʀɢᴇᴅ ᴠɪᴅᴇᴏ ᴘʀᴇsᴇʀᴠᴇs ᴀʟʟ sᴛʀᴇᴀᴍs ᴏғ ᴛʜᴇ ғɪʀsᴛ ᴠɪᴅᴇᴏ ʏᴏᴜ sᴇɴᴅ (ɪ.ᴇ ᴀʟʟ ᴀᴜᴅɪᴏᴛʀᴀᴄᴋs/sᴜʙᴛɪᴛʟᴇs)
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-**ғᴇᴀᴛᴜʀᴇs**
-🔰 ᴍᴇʀɢᴇ ᴜᴘᴛᴏ 𝟷𝟶 ᴠɪᴅᴇᴏ ɪɴ ᴏɴᴇ 
-🔰 ᴜᴘʟᴏᴀᴅ ᴀs ᴅᴏᴄᴜᴍᴇɴᴛs/ᴠɪᴅᴇᴏ
-🔰 ᴄᴜsᴛᴏᴍs ᴛʜᴜᴍʙɴᴀɪʟ sᴜᴘᴘᴏʀᴛ
-🔰 ᴜsᴇʀs ᴄᴀɴ ʟᴏɢɪɴ ᴛᴏ ʙᴏᴛ ᴜsɪɴɢ ᴘᴀssᴡᴏʀᴅ
-🔰 ᴏᴡɴᴇʀ ᴄᴀɴ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs
+
 		""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "sᴜᴘᴘᴏʀᴛ", url="https://t.me/TG_BotCreator"
                     ),
                     InlineKeyboardButton(
-                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "ᴄʀᴇᴀᴛᴏʀ ✔︎", url=f"https://t.me/{Config.OWNER_USERNAME}"
                     ),
                 ],
                 [InlineKeyboardButton("Close 🔐", callback_data="close")],
@@ -723,8 +729,8 @@ async def makeButtons(bot: Client, m: Message, db: dict):
                     ]
                 )
 
-    markup.append([InlineKeyboardButton("🔗 Merge Now", callback_data="merge")])
-    markup.append([InlineKeyboardButton("💥 Clear Files", callback_data="cancel")])
+    markup.append([InlineKeyboardButton("🪢 Merge Now", callback_data="merge")])
+    markup.append([InlineKeyboardButton("⚪ Clear Files", callback_data="cancel")])
     return markup
 
 

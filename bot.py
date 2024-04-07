@@ -411,14 +411,15 @@ async def photo_handler(c: Client, m: Message):
     if not user.allowed:
         res = await m.reply_text(
             text=f"Hi **{m.from_user.first_name}**\n\n🛡️ ᴜɴғᴏʀᴛᴜɴᴀᴛᴇʟʏ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜsᴇ ᴍᴇ\n\n**ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ʟᴏɢɪɴ ᴛᴏ ᴜsᴇ ᴍᴇ sᴇɴᴅ ᴍsɢ ᴛᴏ @{Config.OWNER_USERNAME}** ",
-           reply_markup=InlineKeyboardMarkup(
+            reply_markup=InlineKeyboardMarkup(
 
 		   [
 			   [
 			 InlineKeyboardButton("🌟sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ", url="https://t.me/TG_BotCreator")
 			   ]
 		   ]
-	   )
+	   ),
+		
 	    quote=True,
 	    
         )

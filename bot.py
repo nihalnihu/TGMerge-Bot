@@ -204,7 +204,7 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_text(
-        text=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}** ",
+        text=f"Hy **{m.from_user.first_name}**😊\n\n⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**you have to login the Bot (<code> Send MERGE_PASS </code>): @{Config.OWNER_USERNAME}** 😁",
       reply_markup=InlineKeyboardMarkup(
                 [
 			[

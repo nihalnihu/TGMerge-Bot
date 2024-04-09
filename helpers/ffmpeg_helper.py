@@ -205,7 +205,7 @@ def MergeAudio(videoPath: str, files_list: list, user_id):
     process = subprocess.call(muxcmd)
     LOGGER.info(process)
     return f"downloads/{str(user_id)}/[@TG_BotCreator]_export.mkv"
-    return "
+    
 
 
 

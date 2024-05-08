@@ -759,7 +759,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="Merge Files Upto 4GB 🤩,\n\n  Thanks for using <a href='https://t.me/FileToFile_LinkBot'>This Bot</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
